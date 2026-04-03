@@ -110,16 +110,6 @@
             opacity: 0.4;
         }
 
-        .node-label {
-            pointer-events: none;
-            font-size: 12px;
-            font-weight: 500;
-            text-anchor: middle;
-            dominant-baseline: central;
-            fill: #ffffff;
-            user-select: none;
-        }
-
         .tooltip {
             position: absolute;
             background: rgba(0, 0, 0, 0.85);
@@ -244,11 +234,11 @@
 
     <script>
         const nodes = [
-            { id: "hope-collective", label: "Hope as\nCollective", type: "main", color: "#2c2c2c" },
-            { id: "hope-resistance", label: "Hope as\nResistance", type: "main", color: "#2c2c2c" },
-            { id: "hope-poison", label: "Hope as\nPoison", type: "main", color: "#2c2c2c" },
-            { id: "hope-transformation", label: "Hope as\nTransformation", type: "main", color: "#2c2c2c" },
-            { id: "hope-fragility", label: "Hope as\nFragility", type: "main", color: "#2c2c2c" },
+            { id: "hope-collective", label: "Hope as Collective", type: "main", color: "#2c2c2c" },
+            { id: "hope-resistance", label: "Hope as Resistance", type: "main", color: "#2c2c2c" },
+            { id: "hope-poison", label: "Hope as Poison", type: "main", color: "#2c2c2c" },
+            { id: "hope-transformation", label: "Hope as Transformation", type: "main", color: "#2c2c2c" },
+            { id: "hope-fragility", label: "Hope as Fragility", type: "main", color: "#2c2c2c" },
 
             { id: "community", label: "Community", type: "sub", color: "#666666" },
             { id: "emotion", label: "Emotion", type: "sub", color: "#666666" },
@@ -326,11 +316,6 @@
             .attr("r", d => d.type === "main" ? 30 : 20)
             .attr("fill", d => d.color);
 
-        nodeGroup.append("text")
-            .attr("class", "node-label")
-            .style("font-size", d => d.type === "main" ? "11px" : "10px")
-            .text(d => d.label);
-
         const simulation = d3.forceSimulation(nodes)
             .force("link", d3.forceLink(links).id(d => d.id).distance(70).strength(0.8))
             .force("charge", d3.forceManyBody().strength(-220))
@@ -341,12 +326,12 @@
 
         nodeGroup.on("mouseenter", function(event, d) {
             const tooltip = document.getElementById("tooltip");
-            tooltip.textContent = d.label.replace("\n", " ");
+            tooltip.textContent = d.label;
             tooltip.style.display = "block";
             tooltip.style.left = event.pageX + 10 + "px";
             tooltip.style.top = event.pageY + 10 + "px";
 
-            document.getElementById("info-title").textContent = d.label.replace("\n", " ");
+            document.getElementById("info-title").textContent = d.label;
             document.getElementById("info-text").textContent =
                 d.type === "main"
                     ? "Main theme in the Hope4Hope investigation"
