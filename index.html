@@ -397,6 +397,13 @@
         
         // Update positions on simulation tick
         simulation.on("tick", () => {
+            const padding = 40; // space from edges
+
+            nodes.forEach(d => {
+                d.x = Math.max(padding, Math.min(width - padding, d.x));
+                d.y = Math.max(padding, Math.min(height - padding, d.y));
+            });
+
             link
                 .attr("x1", d => d.source.x)
                 .attr("y1", d => d.source.y)
