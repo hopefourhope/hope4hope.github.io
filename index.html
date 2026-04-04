@@ -213,7 +213,7 @@
 <body>
     <div class="header">
         <h1>Hope4Hope</h1>
-        <p>Explore the network of investigations and themes</p>
+        <p>Explore the network</p>
     </div>
 
     <div class="nav-links">
@@ -234,58 +234,113 @@
 
     <script>
         const nodes = [
-            { id: "hope-collective", label: "Hope as Collective", type: "main", color: "#2c2c2c" },
-            { id: "hope-resistance", label: "Hope as Resistance", type: "main", color: "#2c2c2c" },
-            { id: "hope-poison", label: "Hope as Poison", type: "main", color: "#2c2c2c" },
-            { id: "hope-transformation", label: "Hope as Transformation", type: "main", color: "#2c2c2c" },
-            { id: "hope-fragility", label: "Hope as Fragility", type: "main", color: "#2c2c2c" },
+            { id: "hope-persistence", label: "Hope as Persistence", type: "main", color: "#2c2c2c" },
+            { id: "hope-collective-emotion", label: "Hope as Collective Emotion", type: "main", color: "#2c2c2c" },
+            { id: "hope-agency", label: "Hope as Agency", type: "main", color: "#2c2c2c" },
+            { id: "hope-possibility", label: "Hope as Possibility", type: "main", color: "#2c2c2c" },
+            { id: "hope-paradox", label: "Hope as Paradox", type: "main", color: "#2c2c2c" },
 
-            { id: "community", label: "Community", type: "sub", color: "#666666" },
-            { id: "emotion", label: "Emotion", type: "sub", color: "#666666" },
-            { id: "solidarity", label: "Solidarity", type: "sub", color: "#666666" },
 
-            { id: "activism", label: "Activism", type: "sub", color: "#666666" },
-            { id: "protest", label: "Protest", type: "sub", color: "#666666" },
-            { id: "agency", label: "Agency", type: "sub", color: "#666666" },
-
-            { id: "delusion", label: "Delusion", type: "sub", color: "#666666" },
-            { id: "danger", label: "Danger", type: "sub", color: "#666666" },
-            { id: "ambiguity", label: "Ambiguity", type: "sub", color: "#666666" },
-
-            { id: "change", label: "Change", type: "sub", color: "#666666" },
-            { id: "evolution", label: "Evolution", type: "sub", color: "#666666" },
-            { id: "process", label: "Process", type: "sub", color: "#666666" },
-
-            { id: "vulnerability", label: "Vulnerability", type: "sub", color: "#666666" },
+            { id: "resilience", label: "Resilience", type: "sub", color: "#666666" },
+            { id: "persistence", label: "Persistence", type: "sub", color: "#666666" },
+            { id: "momentum", label: "Momentum", type: "sub", color: "#666666" },
+            { id: "coping", label: "Coping", type: "sub", color: "#666666" },
+            { id: "trust", label: "Trust", type: "sub", color: "#666666" },
+            { id: "passing-on", label: "Passing On", type: "sub", color: "#666666" },
+            { id: "absence-of-fear", label: "Absence of Fear", type: "sub", color: "#666666" },
+            { id: "attitude", label: "Attitude", type: "sub", color: "#666666" },
+            { id: "memory", label: "Memory", type: "sub", color: "#666666" },
+            { id: "material", label: "Material", type: "sub", color: "#666666" },
+            { id: "force", label: "Force", type: "sub", color: "#666666" },
+            { id: "collective-emotion", label: "Collective Emotion", type: "sub", color: "#666666" },
+            { id: "care", label: "Care", type: "sub", color: "#666666" },
+            { id: "compassion", label: "Compassion", type: "sub", color: "#666666" },
+            { id: "intimacy", label: "Intimacy", type: "sub", color: "#666666" },
+            { id: "action", label: "Action", type: "sub", color: "#666666"}, 
+            { id: "resistance", label: "Resistance", type: "sub", color: "#666666"},
+            { id: "freedom", label: "Freedom", type: "sub", color: "#666666" },
+            { id: "self-organization", label: "Self-Organization", type: "sub", color: "#666666" },
+            { id: "dynamic", label: "Dynamic", type: "sub", color: "#666666" },
+            { id: "strategy", label: "Strategy", type: "sub", color: "#666666" },
+            { id: "force", label: "Force", type: "sub", color: "#666666" },
+            { id: "exploration", label: "Exploration", type: "sub", color: "#666666" },
+            { id: "emerging", label: "Emerging", type: "sub", color: "#666666" },
+            { id: "alternative", label: "Alternative", type: "sub", color: "#666666" },
+            { id: "speculation", label: "Speculation", type: "sub", color: "#666666" },
+            { id: "utopia", label: "Utopia", type: "sub", color: "#666666" },
+            { id: "wish", label: "Wish", type: "sub", color: "#666666" },
+            { id: "possible-future", label: "Possible Future", type: "sub", color: "#666666" },
+            { id: "anticipation", label: "Anticipation", type: "sub", color: "#666666" },
+            { id: "curiosity", label: "Curiosity", type: "sub", color: "#666666" },
+            { id: "poison", label: "Poison", type: "sub", color: "#666666" },
+            { id: "horror", label: "Horror", type: "sub", color: "#666666" },
+            { id: "contradiction", label: "Contradiction", type: "sub", color: "#666666" },
+            { id: "illusion", label: "Illusion", type: "sub", color: "#666666" },
             { id: "uncertainty", label: "Uncertainty", type: "sub", color: "#666666" },
-            { id: "resilience", label: "Resilience", type: "sub", color: "#666666" }
+            { id: "limits", label: "Limits", type: "sub", color: "#666666" },
+            { id: "fragility", label: "Fragility", type: "sub", color: "#666666" },
+            { id: "tension", label: "Tension", type: "sub", color: "#666666" },
+            { id: "strategy", label: "Strategy", type: "sub", color: "#666666" }
         ];
 
         const links = [
-            { source: "hope-collective", target: "community" },
-            { source: "hope-collective", target: "emotion" },
-            { source: "hope-collective", target: "solidarity" },
+            { source: "hope-persistence", target: "resilience" },
+            { source: "hope-persistence", target: "persistence" },
+            { source: "hope-persistence", target: "momentum" },
+            { source: "hope-persistence", target: "coping" },
+            { source: "hope-persistence", target: "trust" },
+            { source: "hope-persistence", target: "passing-on" },
+            { source: "hope-persistence", target: "absence-of-fear" },
+            { source: "hope-persistence", target: "attitude" },
+            { source: "hope-persistence", target: "memory" },
+            { source: "hope-persistence", target: "material" },
+            { source: "hope-persistence", target: "force" },
 
-            { source: "hope-resistance", target: "activism" },
-            { source: "hope-resistance", target: "protest" },
-            { source: "hope-resistance", target: "agency" },
+            { source: "hope-collective-emotion", target: "collective-emotion" },
+            { source: "hope-collective-emotion", target: "care" },
+            { source: "hope-collective-emotion", target: "compassion" },
+            { source: "hope-collective-emotion", target: "intimacy" },
+            { source: "hope-collective-emotion", target: "passing-on" },
+            { source: "hope-collective-emotion", target: "trust" },
+            { source: "hope-collective-emotion", target: "material" },
+            { source: "hope-collective-emotion", target: "memory" },
+            { source: "hope-collective-emotion", target: "attitude" },
 
-            { source: "hope-poison", target: "delusion" },
-            { source: "hope-poison", target: "danger" },
-            { source: "hope-poison", target: "ambiguity" },
+            { source: "hope-agency", target: "action" },
+            { source: "hope-agency", target: "agency" },
+            { source: "hope-agency", target: "resistance" },
+            { source: "hope-agency", target: "freedom" },
+            { source: "hope-agency", target: "self-organization" },
+            { source: "hope-agency", target: "dynamic" },
+            { source: "hope-agency", target: "strategy" },
+            { source: "hope-agency", target: "force" },
+            { source: "hope-agency", target: "exploration" },
+            { source: "hope-agency", target: "emerging" },
+            { source: "hope-agency", target: "alternative" },
 
-            { source: "hope-transformation", target: "change" },
-            { source: "hope-transformation", target: "evolution" },
-            { source: "hope-transformation", target: "process" },
 
-            { source: "hope-fragility", target: "vulnerability" },
-            { source: "hope-fragility", target: "uncertainty" },
-            { source: "hope-fragility", target: "resilience" },
+            { source: "hope-possibility", target: "speculation" },
+            { source: "hope-possibility", target: "utopia" },
+            { source: "hope-possibility", target: "wish" },
+            { source: "hope-possibility", target: "possible-future" },
+            { source: "hope-possibility", target: "anticipation" },
+            { source: "hope-possibility", target: "momentum" },
+            { source: "hope-possibility", target: "curiosity" },
+            { source: "hope-possibility", target: "exploration" },
+            { source: "hope-possibility", target: "alternative" },
+            { source: "hope-possibility", target: "emerging" },
 
-            { source: "community", target: "solidarity" },
-            { source: "activism", target: "agency" },
-            { source: "change", target: "process" },
-            { source: "vulnerability", target: "resilience" }
+
+            { source: "hope-paradox", target: "poison" },
+            { source: "hope-paradox", target: "horror" },
+            { source: "hope-paradox", target: "contradiction" },
+            { source: "hope-paradox", target: "illusion" },
+            { source: "hope-paradox", target: "uncertainty" },
+            { source: "hope-paradox", target: "limits" },
+            { source: "hope-paradox", target: "fragility" },
+            { source: "hope-paradox", target: "tension" },
+            { source: "hope-paradox", target: "absence-of-fear" },
+            { source: "hope-paradox", target: "attitude"}
         ];
 
         const svg = d3.select("#graph");
