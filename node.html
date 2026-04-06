@@ -51,90 +51,188 @@
     const id = params.get("id");
 
     const data = {
-      "hope-collective": {
-        title: "Hope as Collective",
-        content: "Hope emerges through shared experience, community, and solidarity."
+      // Main nodes
+      "hope-persistence": {
+        title: "Hope as Persistence",
+        content: "Hope that endures through time, maintaining continuity and commitment despite challenges. It is the long-form engagement with possibility, rooted in the capacity to continue moving forward."
       },
-      "hope-resistance": {
-        title: "Hope as Resistance",
-        content: "Hope becomes a force that drives activism, protest, and agency."
+      "hope-collective-emotion": {
+        title: "Hope as Collective Emotion",
+        content: "Hope experienced and shared within groups, communities, and networks. It is a force that binds people together through shared feeling, care, and mutual support."
       },
-      "hope-poison": {
-        title: "Hope as Poison",
-        content: "Hope can mislead, creating delusion, danger, and ambiguity."
+      "hope-agency": {
+        title: "Hope as Agency",
+        content: "Hope as the capacity to act, make choices, and shape outcomes. It is the power to resist, organize, and create alternatives through deliberate action."
       },
-      "hope-transformation": {
-        title: "Hope as Transformation",
-        content: "Hope enables change, evolution, and ongoing processes."
+      "hope-possibility": {
+        title: "Hope as Possibility",
+        content: "Hope oriented toward what could be—futures not yet realized but imaginable. It encompasses speculation, wonder, and the exploration of alternative worlds."
       },
-      "hope-fragility": {
-        title: "Hope as Fragility",
-        content: "Hope exists within vulnerability, uncertainty, and resilience."
-      },
-
-      "community": {
-        title: "Community",
-        content: "Shared spaces and relationships that shape collective hope."
-      },
-      "emotion": {
-        title: "Emotion",
-        content: "Hope as a deeply felt emotional experience."
-      },
-      "solidarity": {
-        title: "Solidarity",
-        content: "Standing together in shared belief and purpose."
+      "hope-paradox": {
+        title: "Hope as Paradox",
+        content: "Hope that contains within itself contradictions, dangers, and fragility. It is simultaneously sustaining and poisonous, certain and uncertain, real and illusory."
       },
 
-      "activism": {
-        title: "Activism",
-        content: "Action driven by hope for change."
+      // Sub-nodes for Hope as Persistence
+      "resilience": {
+        title: "Resilience",
+        content: "The capacity to bounce back and continue despite adversity. It is the foundation of persistent hope."
       },
-      "protest": {
-        title: "Protest",
-        content: "Visible resistance rooted in hopeful futures."
+      "persistence": {
+        title: "Persistence",
+        content: "Continuous effort and determination to maintain direction and commitment over time."
       },
-      "agency": {
-        title: "Agency",
-        content: "The power to act and shape outcomes."
+      "momentum": {
+        title: "Momentum",
+        content: "The forward movement that builds from sustained effort, creating energy that carries hope forward."
+      },
+      "coping": {
+        title: "Coping",
+        content: "The mechanisms by which individuals and communities manage challenges while maintaining hope."
+      },
+      "trust": {
+        title: "Trust",
+        content: "Belief in others and in the possibility of positive outcomes, essential to hope's persistence."
+      },
+      "passing-on": {
+        title: "Passing On",
+        content: "The transmission of hope, values, and resilience across generations."
+      },
+      "absence-of-fear": {
+        title: "Absence of Fear",
+        content: "The courage to act and believe despite potential dangers or failures."
+      },
+      "attitude": {
+        title: "Attitude",
+        content: "The mindset and orientation that sustains hopeful engagement with the world."
+      },
+      "memory": {
+        title: "Memory",
+        content: "Historical consciousness that grounds present hope in past struggles and victories."
+      },
+      "material": {
+        title: "Material",
+        content: "The physical, economic, and tangible conditions that enable or constrain hope."
+      },
+      "force": {
+        title: "Force",
+        content: "Hope as an active power that moves people and societies."
       },
 
-      "delusion": {
-        title: "Delusion",
-        content: "Hope that distorts reality or avoids truth."
+      // Sub-nodes for Hope as Collective Emotion
+      "collective-emotion": {
+        title: "Collective Emotion",
+        content: "Feelings shared and amplified across groups, creating a common affective landscape."
       },
-      "danger": {
-        title: "Danger",
-        content: "When hope leads to risky or harmful outcomes."
+      "care": {
+        title: "Care",
+        content: "Attentiveness and responsibility to others, fundamental to collective hope."
       },
-      "ambiguity": {
-        title: "Ambiguity",
-        content: "The unclear and unstable nature of hope."
+      "compassion": {
+        title: "Compassion",
+        content: "The capacity to understand and share in the suffering and hopes of others."
       },
-
-      "change": {
-        title: "Change",
-        content: "Hope as a driver of transformation."
-      },
-      "evolution": {
-        title: "Evolution",
-        content: "Gradual development shaped by hopeful thinking."
-      },
-      "process": {
-        title: "Process",
-        content: "Hope unfolding over time."
+      "intimacy": {
+        title: "Intimacy",
+        content: "Close connection and vulnerability between people that deepens collective hope."
       },
 
-      "vulnerability": {
-        title: "Vulnerability",
-        content: "Hope requires openness and risk."
+      // Sub-nodes for Hope as Agency
+      "action": {
+        title: "Action",
+        content: "Deliberate intervention in the world to bring about desired outcomes."
+      },
+      "resistance": {
+        title: "Resistance",
+        content: "Opposition to existing conditions, rooted in hope for alternatives."
+      },
+      "freedom": {
+        title: "Freedom",
+        content: "The capacity and right to self-determination within collective frameworks."
+      },
+      "self-organization": {
+        title: "Self-Organization",
+        content: "Communities organizing themselves without external authority, expressing agency."
+      },
+      "dynamic": {
+        title: "Dynamic",
+        content: "Process-oriented and adaptable approaches to creating change."
+      },
+      "strategy": {
+        title: "Strategy",
+        content: "Intentional planning and coordination of actions toward hopeful goals."
+      },
+      "exploration": {
+        title: "Exploration",
+        content: "Active investigation and discovery of new possibilities and pathways."
+      },
+      "emerging": {
+        title: "Emerging",
+        content: "New forms, ideas, and movements arising from hopeful experimentation."
+      },
+      "alternative": {
+        title: "Alternative",
+        content: "Different ways of being, organizing, and imagining futures."
+      },
+
+      // Sub-nodes for Hope as Possibility
+      "speculation": {
+        title: "Speculation",
+        content: "Imaginative exploration of what might be, without guarantee of realization."
+      },
+      "utopia": {
+        title: "Utopia",
+        content: "Vision of ideal or radically different futures that inspire hopeful action."
+      },
+      "wish": {
+        title: "Wish",
+        content: "Desire for something better, expressing hope without certainty."
+      },
+      "possible-future": {
+        title: "Possible Future",
+        content: "Futures that are imaginable and potentially realizable through hopeful effort."
+      },
+      "anticipation": {
+        title: "Anticipation",
+        content: "Looking forward with expectation and engagement toward what might come."
+      },
+      "curiosity": {
+        title: "Curiosity",
+        content: "Openness to discovery and wonder, driving exploration of possibilities."
+      },
+
+      // Sub-nodes for Hope as Paradox
+      "poison": {
+        title: "Poison",
+        content: "Hope that can be harmful when it enables denial, complacency, or dangerous risk-taking."
+      },
+      "horror": {
+        title: "Horror",
+        content: "The dark possibilities and terrors that co-exist with hopeful visions."
+      },
+      "contradiction": {
+        title: "Contradiction",
+        content: "The internal conflicts within hope itself—between certainty and doubt, action and waiting."
+      },
+      "illusion": {
+        title: "Illusion",
+        content: "Hope that obscures reality or creates false perceptions."
       },
       "uncertainty": {
         title: "Uncertainty",
-        content: "Hope exists without guarantees."
+        content: "The fundamental unknown quality of whether hoped-for futures will materialize."
       },
-      "resilience": {
-        title: "Resilience",
-        content: "The ability to sustain hope despite challenges."
+      "limits": {
+        title: "Limits",
+        content: "The boundaries of what hope can achieve or address."
+      },
+      "fragility": {
+        title: "Fragility",
+        content: "The delicate, vulnerable nature of hope—easily damaged or destroyed."
+      },
+      "tension": {
+        title: "Tension",
+        content: "The creative friction between competing hopes, desires, and possibilities."
       }
     };
 
