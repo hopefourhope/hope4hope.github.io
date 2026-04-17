@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hope4Hope – Works</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background-color: #ffffff;
+            color: #4a4a4a;
+        }
+
+        .nav-links {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 101;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            color: #4a4a4a;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 2px;
+        }
+
+        .nav-links a:hover {
+            color: #2c2c2c;
+            border-bottom-color: #2c2c2c;
+        }
+
+        .nav-links a.active {
+            color: #2c2c2c;
+            border-bottom-color: #2c2c2c;
+        }
+
+        .header {
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid #e8e8e8;
+            margin-bottom: 3rem;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2c2c2c;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 0.95rem;
+            color: #7a7a7a;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 3rem 2rem;
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .work-card {
+            background: #ffffff;
+            border: 1px solid #e8e8e8;
+            border-radius: 2px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .work-card:hover {
+            border-color: #2c2c2c;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .work-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2c2c2c;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .work-card p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+            flex-grow: 1;
+            margin-bottom: 1rem;
+        }
+
+        .work-card .artist {
+            font-size: 0.85rem;
+            color: #999;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                top: 1.5rem;
+                right: 1.5rem;
+                gap: 1rem;
+            }
+
+            .nav-links a {
+                font-size: 0.85rem;
+            }
+
+            .header {
+                padding: 2rem 1.5rem 1.5rem;
+            }
+
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 0 1.5rem 2rem 1.5rem;
+            }
+
+            .works-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .work-card {
+                padding: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                top: 1rem;
+                right: 1rem;
+                gap: 0.5rem;
+            }
+
+            .nav-links a {
+                font-size: 0.75rem;
+            }
+
+            .header {
+                padding: 1.5rem 1rem 1rem;
+            }
+
+            .header h1 {
+                font-size: 1.25rem;
+            }
+
+            .header p {
+                font-size: 0.9rem;
+            }
+
+            .container {
+                padding: 0 1rem 2rem 1rem;
+            }
+
+            .works-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .work-card {
+                padding: 1rem;
+            }
+
+            .work-card h3 {
+                font-size: 1rem;
+            }
+
+            .work-card p {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-links">
+        <a href="index.html">Network</a>
+        <a href="works.html" class="active">Works</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <div class="header">
+        <h1>Works</h1>
+        <p>Explore individual artistic contributions</p>
+    </div>
+
+    <div class="container">
+        <div class="works-grid" id="works-grid"></div>
+    </div>
+
+    <script>
+        const works = [
+            {
+                id: "work-1",
+                title: "Work Title 1L  E   F  T | F  E  L   T",
+                artist: "Khadisha Dabayeva",
+                description: "Mixed-media installation"
+            },
+            {
+                id: "work-2",
+                title: "Staying in Touch 2.0",
+                artist: "Lili Kátai and Elias Schulz",
+                description: "Performance"
+            },
+            {
+                id: "work-3",
+                title: "The Grammar of Agency",
+                artist: "Yiwen Che",
+                description: "A Series of Interactive Installations"
+            },
+            {
+                id: "work-4",
+                title: "Work Title 4",
+                artist: "Artist Name",
+                description: "Brief description of the work goes here."
+            },
+            {
+                id: "work-5",
+                title: "Work Title 5",
+                artist: "Artist Name",
+                description: "Brief description of the work goes here."
+            },
+            {
+                id: "work-6",
+                title: "Work Title 6",
+                artist: "Artist Name",
+                description: "Brief description of the work goes here."
+            },
+            {
+                id: "work-7",
+                title: "Work Title 7",
+                artist: "Artist Name",
+                description: "Brief description of the work goes here."
+            },
+            {
+                id: "work-8",
+                title: "Work Title 8",
+                artist: "Artist Name",
+                description: "Brief description of the work goes here."
+            },
+            {
+                id: "work-9",
+                title: "Work Title 9",
+                artist: "Artist Name",
+                description: "Brief description of the work goes here."
+            },
+            {
+                id: "work-10",
+                title: "Work Title 10",
+                artist: "Artist Name",
+                description: "Brief description of the work goes here."
+            },
+            {
+                id: "work-11",
+                title: "Work Title 11",
+                artist: "Artist Name",
+                description: "Brief description of the work goes here."
+            },
+            {
+                id: "work-12",
+                title: "Work Title 12",
+                artist: "Artist Name",
+                description: "Brief description of the work goes here."
+            },
+            {
+                id: "work-13",
+                title: "Work Title 13",
+                artist: "Artist Name",
+                description: "Brief description of the work goes here."
+            },
+            {
+                id: "work-14",
+                title: "Work Title 14",
+                artist: "Artist Name",
+                description: "Brief description of the work goes here."
+            },
+            {
+                id: "work-15",
+                title: "Work Title 15",
+                artist: "Artist Name",
+                description: "Brief description of the work goes here."
+            },
+            {
+                id: "work-16",
+                title: "Work Title 16",
+                artist: "Artist Name",
+                description: "Brief description of the work goes here."
+            }
+        ];
+
+        const grid = document.getElementById("works-grid");
+        works.forEach(work => {
+            const card = document.createElement("a");
+            card.href = `${work.id}.html`;
+            card.className = "work-card";
+            card.innerHTML = `
+                <h3>${work.title}</h3>
+                <p>${work.description}</p>
+                <span class="artist">by ${work.artist}</span>
+            `;
+            grid.appendChild(card);
+        });
+    </script>
+</body>
+</html>
