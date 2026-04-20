@@ -37,6 +37,42 @@
       line-height: 1.6;
       color: #555;
     }
+
+    .works-section {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e8e8e8;
+  }
+
+  .works-section h2 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #999;
+      margin-bottom: 1rem;
+      font-weight: 500;
+  }
+
+  .work-link {
+      display: block;
+      margin-bottom: 0.75rem;
+      text-decoration: none;
+      color: #4a4a4a;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+  }
+
+  .work-link:hover {
+      color: #2c2c2c;
+  }
+
+  .work-link span {
+      display: block;
+      font-size: 0.8rem;
+      color: #999;
+      margin-top: 0.1rem;
+  }
+
   </style>
 </head>
 <body>
@@ -246,6 +282,13 @@
       }
     };
 
+<script src="data.js"></script>
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+
+    const data = { ... }; // your existing data object stays here
+
     const node = data[id];
 
     if (node) {
@@ -255,6 +298,31 @@
       document.getElementById("title").textContent = "Not Found";
       document.getElementById("content").textContent = "This topic does not exist.";
     }
-  </script>
+
+    const worksSection = document.createElement("div");
+    worksSection.className = "works-section";
+    worksSection.innerHTML = "<h2>Works</h2>";
+
+    const linkedWorks = Object.entries(artistModes).filter(([, modes]) =>
+        modes.includes(id)
+    );
+
+    if (linkedWorks.length > 0) {
+        linkedWorks.forEach(([workId]) => {
+            const meta = workMeta[workId];
+            if (!meta) return;
+            const a = document.createElement("a");
+            a.href = meta.file;
+            a.className = "work-link";
+            a.innerHTML = `${meta.title}<span>${meta.artist}</span>`;
+            worksSection.appendChild(a);
+        });
+    } else {
+        worksSection.innerHTML += "<p style='color:#999; font-size:0.9rem'>No works linked yet.</p>";
+    }
+
+    document.querySelector(".container").appendChild(worksSection);
+</script>
+
 </body>
 </html>

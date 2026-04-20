@@ -97,8 +97,48 @@
                 font-size: 1.5rem;
             }
         }
+
+
+        .modes-section {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e8e8e8;
+        }
+
+        .modes-section h2 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #999;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .mode-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .mode-tag {
+            display: inline-block;
+            padding: 0.3rem 0.75rem;
+            border: 1px solid #d0d0d0;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #4a4a4a;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .mode-tag:hover {
+            border-color: #2c2c2c;
+            color: #2c2c2c;
+        }
+
     </style>
 </head>
+
 <body>
 
     <div class="nav-links">
@@ -111,20 +151,36 @@
         <a href="../works.html" class="back-link">← Back to Works</a>
 
         <h1>TBA</h1>
-        <div class="artist"> Maya
-</div>
+        <div class="artist">Maya</div>
 
         <div class="description">
-            <p>
-                TBA
-            </p>
+            <p>TBA</p>
         </div>
 
         <div class="media">
-            <!-- Replace with actual media -->
-            <img src="../assets/work-1.jpg" alt="Work image">
+            <img src="../assets/work-16.jpg" alt="Work image">
+        </div>
+
+        <div class="modes-section">
+            <h2>Modes of Hope</h2>
+            <div class="mode-tags" id="mode-tags"></div>
         </div>
     </div>
+
+    <script src="../data.js"></script>
+    <script>
+        const workId = "work-16"; // ← change this number for each page
+        const modes = artistModes[workId] || [];
+        const container = document.getElementById("mode-tags");
+
+        modes.forEach(mode => {
+            const a = document.createElement("a");
+            a.href = `../node.html?id=${mode}`;
+            a.className = "mode-tag";
+            a.textContent = mode.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+            container.appendChild(a);
+        });
+    </script>
 
 </body>
 </html>
