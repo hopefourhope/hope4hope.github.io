@@ -158,10 +158,29 @@
         </div>
 
         <div class="media">
-             <!-- Replace with actual media -->
             <img src="../assets/work-1.jpg" alt="Work image">
         </div>
+
+        <div class="modes-section">
+            <h2>Modes of Hope</h2>
+            <div class="mode-tags" id="mode-tags"></div>
+        </div>
     </div>
+
+    <script src="../data.js"></script>
+    <script>
+        const workId = "work-1";
+        const modes = artistModes[workId] || [];
+        const container = document.getElementById("mode-tags");
+
+        modes.forEach(mode => {
+            const a = document.createElement("a");
+            a.href = `../node.html?id=${mode}`;
+            a.className = "mode-tag";
+            a.textContent = mode.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+            container.appendChild(a);
+        });
+    </script>
 
 </body>
 </html>
