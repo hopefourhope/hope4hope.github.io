@@ -13,7 +13,7 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            font-family: 'aeonikmono-regular', monospace;
             background-color: #ffffff;
             color: #4a4a4a;
             overflow: hidden;
@@ -40,7 +40,7 @@
         .header h1 {
             font-size: 2rem;
             font-weight: 700;
-            color: #2c2c2c;
+            color: #fcc602;
             margin-bottom: 0.5rem;
         }
 
@@ -69,13 +69,13 @@
         }
 
         .nav-links a:hover {
-            color: #2c2c2c;
-            border-bottom-color: #2c2c2c;
+            color: #fcc602;
+            border-bottom-color: #fcc602;
         }
 
         .nav-links a.active {
-            color: #2c2c2c;
-            border-bottom-color: #2c2c2c;
+            color: #fcc602;
+            border-bottom-color: #fcc602;
         }
 
         #graph-container {
@@ -108,7 +108,7 @@
 
         .node-label {
             pointer-events: none;
-            font-family: 'aeonikmono-regular', sans-serif;
+            font-family: 'aeonikmono-regular', monospace;
             word-wrap: break-word;
         }
 
@@ -156,7 +156,7 @@
 
         .info-panel h3 {
             font-size: 1.1rem;
-            color: #2c2c2c;
+            color: #fcc602;
             margin-bottom: 0.5rem;
         }
 
@@ -249,52 +249,52 @@
 
     <script>
         const nodes = [
-            { id: "hope-persistence", label: "Hope as Persistence", type: "main", color: "#2c2c2c" },
-            { id: "hope-collective-emotion", label: "Hope as Collective Emotion", type: "main", color: "#2c2c2c" },
-            { id: "hope-agency", label: "Hope as Agency", type: "main", color: "#2c2c2c" },
-            { id: "hope-possibility", label: "Hope as Possibility", type: "main", color: "#2c2c2c" },
-            { id: "hope-paradox", label: "Hope as Paradox", type: "main", color: "#2c2c2c" },
+            { id: "hope-persistence", label: "Hope as Persistence", type: "main", color: "#fcc602" },
+            { id: "hope-collective-emotion", label: "Hope as Collective Emotion", type: "main", color: "#fcc602" },
+            { id: "hope-agency", label: "Hope as Agency", type: "main", color: "#fcc602" },
+            { id: "hope-possibility", label: "Hope as Possibility", type: "main", color: "#fcc602" },
+            { id: "hope-paradox", label: "Hope as Paradox", type: "main", color: "#fcc602" },
 
-            { id: "resilience", label: "Resilience", type: "sub", color: "#666666" },
-            { id: "persistence", label: "Persistence", type: "sub", color: "#666666" },
-            { id: "momentum", label: "Momentum", type: "sub", color: "#666666" },
-            { id: "coping", label: "Coping", type: "sub", color: "#666666" },
-            { id: "trust", label: "Trust", type: "sub", color: "#666666" },
-            { id: "passing-on", label: "Passing On", type: "sub", color: "#666666" },
-            { id: "absence-of-fear", label: "Absence of Fear", type: "sub", color: "#666666" },
-            { id: "attitude", label: "Attitude", type: "sub", color: "#666666" },
-            { id: "memory", label: "Memory", type: "sub", color: "#666666" },
-            { id: "material", label: "Material", type: "sub", color: "#666666" },
-            { id: "force", label: "Force", type: "sub", color: "#666666" },
-            { id: "collective-emotion", label: "Collective Emotion", type: "sub", color: "#666666" },
-            { id: "care", label: "Care", type: "sub", color: "#666666" },
-            { id: "compassion", label: "Compassion", type: "sub", color: "#666666" },
-            { id: "intimacy", label: "Intimacy", type: "sub", color: "#666666" },
-            { id: "collective-care-solidarity", label: "Collective Care & Solidarity", type: "sub", color: "#666666" },
-            { id: "embodiment", label: "Embodiment", type: "sub", color: "#666666" },
-            { id: "action", label: "Action", type: "sub", color: "#666666"}, 
-            { id: "resistance", label: "Resistance", type: "sub", color: "#666666"},
-            { id: "freedom", label: "Freedom", type: "sub", color: "#666666" },
-            { id: "self-organization", label: "Self-Organization", type: "sub", color: "#666666" },
-            { id: "dynamic", label: "Dynamic", type: "sub", color: "#666666" },
-            { id: "strategy", label: "Strategy", type: "sub", color: "#666666" },
-            { id: "exploration", label: "Exploration", type: "sub", color: "#666666" },
-            { id: "emerging", label: "Emerging", type: "sub", color: "#666666" },
-            { id: "alternative", label: "Alternative", type: "sub", color: "#666666" },
-            { id: "speculation", label: "Speculation", type: "sub", color: "#666666" },
-            { id: "utopia", label: "Utopia", type: "sub", color: "#666666" },
-            { id: "wish", label: "Wish", type: "sub", color: "#666666" },
-            { id: "possible-future", label: "Possible Future", type: "sub", color: "#666666" },
-            { id: "anticipation", label: "Anticipation", type: "sub", color: "#666666" },
-            { id: "curiosity", label: "Curiosity", type: "sub", color: "#666666" },
-            { id: "poison", label: "Poison", type: "sub", color: "#666666" },
-            { id: "horror", label: "Horror", type: "sub", color: "#666666" },
-            { id: "contradiction", label: "Contradiction", type: "sub", color: "#666666" },
-            { id: "illusion", label: "Illusion", type: "sub", color: "#666666" },
-            { id: "uncertainty", label: "Uncertainty", type: "sub", color: "#666666" },
-            { id: "limits", label: "Limits", type: "sub", color: "#666666" },
-            { id: "fragility", label: "Fragility", type: "sub", color: "#666666" },
-            { id: "tension", label: "Tension", type: "sub", color: "#666666" }
+            { id: "resilience", label: "Resilience", type: "sub", color: "#fcca14" },
+            { id: "persistence", label: "Persistence", type: "sub", color: "#fcca14" },
+            { id: "momentum", label: "Momentum", type: "sub", color: "#fcca14" },
+            { id: "coping", label: "Coping", type: "sub", color: "#fcca14" },
+            { id: "trust", label: "Trust", type: "sub", color: "#fcca14" },
+            { id: "passing-on", label: "Passing On", type: "sub", color: "#fcca14" },
+            { id: "absence-of-fear", label: "Absence of Fear", type: "sub", color: "#fcca14" },
+            { id: "attitude", label: "Attitude", type: "sub", color: "#fcca14" },
+            { id: "memory", label: "Memory", type: "sub", color: "#fcca14" },
+            { id: "material", label: "Material", type: "sub", color: "#fcca14" },
+            { id: "force", label: "Force", type: "sub", color: "#fcca14" },
+            { id: "collective-emotion", label: "Collective Emotion", type: "sub", color: "#fcca14" },
+            { id: "care", label: "Care", type: "sub", color: "#fcca14" },
+            { id: "compassion", label: "Compassion", type: "sub", color: "#fcca14" },
+            { id: "intimacy", label: "Intimacy", type: "sub", color: "#fcca14" },
+            { id: "collective-care-solidarity", label: "Collective Care & Solidarity", type: "sub", color: "#fcca14" },
+            { id: "embodiment", label: "Embodiment", type: "sub", color: "#fcca14" },
+            { id: "action", label: "Action", type: "sub", color: "#fcca14"}, 
+            { id: "resistance", label: "Resistance", type: "sub", color: "#fcca14"},
+            { id: "freedom", label: "Freedom", type: "sub", color: "#fcca14" },
+            { id: "self-organization", label: "Self-Organization", type: "sub", color: "#fcca14" },
+            { id: "dynamic", label: "Dynamic", type: "sub", color: "#fcca14" },
+            { id: "strategy", label: "Strategy", type: "sub", color: "#fcca14" },
+            { id: "exploration", label: "Exploration", type: "sub", color: "#fcca14" },
+            { id: "emerging", label: "Emerging", type: "sub", color: "#fcca14" },
+            { id: "alternative", label: "Alternative", type: "sub", color: "#fcca14" },
+            { id: "speculation", label: "Speculation", type: "sub", color: "#fcca14" },
+            { id: "utopia", label: "Utopia", type: "sub", color: "#fcca14" },
+            { id: "wish", label: "Wish", type: "sub", color: "#fcca14" },
+            { id: "possible-future", label: "Possible Future", type: "sub", color: "#fcca14" },
+            { id: "anticipation", label: "Anticipation", type: "sub", color: "#fcca14" },
+            { id: "curiosity", label: "Curiosity", type: "sub", color: "#fcca14" },
+            { id: "poison", label: "Poison", type: "sub", color: "#fcca14" },
+            { id: "horror", label: "Horror", type: "sub", color: "#fcca14" },
+            { id: "contradiction", label: "Contradiction", type: "sub", color: "#fcca14" },
+            { id: "illusion", label: "Illusion", type: "sub", color: "#fcca14" },
+            { id: "uncertainty", label: "Uncertainty", type: "sub", color: "#fcca14" },
+            { id: "limits", label: "Limits", type: "sub", color: "#fcca14" },
+            { id: "fragility", label: "Fragility", type: "sub", color: "#fcca14" },
+            { id: "tension", label: "Tension", type: "sub", color: "#fcca14" }
         ];
 
         const links = [
