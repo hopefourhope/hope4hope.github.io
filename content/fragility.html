@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hope4Hope – Hope as Fragility</title>
+    <style>
+        @font-face {
+            font-family: 'aeonikmono-regular';
+            src: url('../fonts/AeonikMono-Regular.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'aeonikmono-regular', monospace; background-color: #ffffff; color: #4a4a4a; line-height: 1.7; font-size: 16px; }
+        .nav-links { position: fixed; top: 2rem; right: 2rem; z-index: 101; display: flex; gap: 2rem; }
+        .nav-links a { font-size: 0.95rem; color: #4a4a4a; text-decoration: none; font-weight: 500; transition: color 0.2s ease; border-bottom: 2px solid transparent; padding-bottom: 2px; }
+        .nav-links a:hover { color: #fcc602; border-bottom-color: #fcc602; }
+        .nav-links a.active { color: #fcc602; border-bottom-color: #fcc602; }
+        .container { max-width: 800px; margin: 0 auto; padding: 3rem 2rem 4rem 2rem; }
+        .back-link { display: inline-block; font-size: 0.9rem; color: #666; text-decoration: none; margin-bottom: 2rem; transition: color 0.2s ease; }
+        .back-link:hover { color: #fcc602; }
+        h1 { font-size: 2rem; font-weight: 700; color: #fcc602; margin-bottom: 0.5rem; line-height: 1.2; }
+        .type-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: #999; margin-bottom: 2rem; }
+        .description { font-size: 1rem; line-height: 1.85; color: #4a4a4a; text-align: justify; border-top: 1px solid #e8e8e8; padding-top: 2rem; margin-bottom: 2rem; }
+        .description p { margin-bottom: 1.2rem; }
+        .description p:last-child { margin-bottom: 0; }
+        .linked-works { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e8e8e8; }
+        .linked-works h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: #999; margin-bottom: 1.2rem; font-weight: 500; }
+        .work-link { display: block; margin-bottom: 0.75rem; text-decoration: none; color: #4a4a4a; font-size: 0.95rem; transition: color 0.2s ease; }
+        .work-link:hover { color: #fcc602; }
+        .work-link span { display: block; font-size: 0.8rem; color: #999; margin-top: 0.1rem; }
+        .image-grid-section { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #e8e8e8; }
+        .image-grid-section h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: #999; margin-bottom: 1.2rem; font-weight: 500; }
+        .image-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; }
+        .image-grid-item { aspect-ratio: 1 / 1; background-color: #f4f4f4; overflow: hidden; }
+        .image-grid-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.3s ease; }
+        .image-grid-item img:hover { opacity: 0.85; }
+        .image-grid-item.empty { border: 1px dashed #ddd; }
+        @media (max-width: 768px) { .nav-links { top: 1.5rem; right: 1.5rem; gap: 1rem; } .nav-links a { font-size: 0.85rem; } .container { padding: 2rem 1.5rem 3rem 1.5rem; } h1 { font-size: 1.5rem; } .image-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 480px) { .nav-links { top: 1rem; right: 1rem; gap: 0.5rem; } .nav-links a { font-size: 0.75rem; } .container { padding: 1.5rem 1rem 2rem 1rem; } h1 { font-size: 1.25rem; } .image-grid { grid-template-columns: repeat(2, 1fr); } }
+    </style>
+</head>
+<body>
+    <div class="nav-links">
+        <a href="../index.html">Network</a>
+        <a href="../about.html">About</a>
+        <a href="../works.html">Work Descriptions</a>
+    </div>
+    <div class="container">
+        <a class="back-link" href="../index.html">← Back to Network</a>
+        <h1>Hope as Fragility</h1>
+        <p class="type-label">Mode of Hope</p>
+        <div class="description">
+            <p>[Description to be added]</p>
+        </div>
+        <div class="linked-works">
+            <h2>Related Works</h2>
+            <a class="work-link" href="../work_descriptions/work-1.html">
+                L  E   F  T | F  E  L   T
+                <span>Khadisha Dabayeva</span>
+            </a>
+            <a class="work-link" href="../work_descriptions/work-2.html">
+                Staying in Touch 2.0
+                <span>Lili Kátai and Elias Schulz</span>
+            </a>
+            <a class="work-link" href="../work_descriptions/work-4.html">
+                hopestars: werden
+                <span>the funky siblings | Aimée Kohn and Charlotte Kuoi</span>
+            </a>
+            <a class="work-link" href="../work_descriptions/work-8.html">
+                Resignation and the Refusal to Resign
+                <span>Sophie Hamann</span>
+            </a>
+            <a class="work-link" href="../work_descriptions/work-15.html">
+                Hope is a Practice
+                <span>Emilie Schmidt</span>
+            </a>
+        </div>
+        <div class="image-grid-section">
+            <h2>Images</h2>
+            <div class="image-grid">
+                <div class="image-grid-item empty"></div>
+                <div class="image-grid-item empty"></div>
+                <div class="image-grid-item empty"></div>
+                <div class="image-grid-item empty"></div>
+                <div class="image-grid-item empty"></div>
+                <div class="image-grid-item empty"></div>
+                <div class="image-grid-item empty"></div>
+                <div class="image-grid-item empty"></div>
+                <div class="image-grid-item empty"></div>
+                <div class="image-grid-item empty"></div>
+                <div class="image-grid-item empty"></div>
+                <div class="image-grid-item empty"></div>
+                <div class="image-grid-item empty"></div>
+                <div class="image-grid-item empty"></div>
+                <div class="image-grid-item empty"></div>
+                <div class="image-grid-item empty"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
