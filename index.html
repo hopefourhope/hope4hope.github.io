@@ -433,8 +433,12 @@
         })
         .on("click", function(event, d) {
             event.stopPropagation();
+        if (d.type === "main") {
+            window.location.href = `content/${d.id}.html`;
+        } else {
             window.location.href = `node.html?id=${d.id}`;
-        });
+        }       
+     });
 
         simulation.on("tick", () => {
             const padding = 40;
