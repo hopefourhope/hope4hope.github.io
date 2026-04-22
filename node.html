@@ -5,8 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hope4Hope – Node</title>
   <style>
+    @font-face {
+      font-family: 'aeonikmono-regular';
+      src: url('fonts/aeonikmono-regular.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      font-family: 'aeonikmono-regular', sans-serif;
       margin: 0;
       padding: 2rem;
       background: #ffffff;
@@ -42,37 +49,36 @@
       margin-top: 2.5rem;
       padding-top: 1.5rem;
       border-top: 1px solid #e8e8e8;
-  }
+    }
 
-  .works-section h2 {
+    .works-section h2 {
       font-size: 0.85rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: #999;
       margin-bottom: 1rem;
       font-weight: 500;
-  }
+    }
 
-  .work-link {
+    .work-link {
       display: block;
       margin-bottom: 0.75rem;
       text-decoration: none;
       color: #4a4a4a;
       font-size: 0.95rem;
       transition: color 0.2s ease;
-  }
+    }
 
-  .work-link:hover {
+    .work-link:hover {
       color: #2c2c2c;
-  }
+    }
 
-  .work-link span {
+    .work-link span {
       display: block;
       font-size: 0.8rem;
       color: #999;
       margin-top: 0.1rem;
-  }
-
+    }
   </style>
 </head>
 <body>
@@ -82,12 +88,12 @@
     <p id="content"></p>
   </div>
 
+  <script src="data.js"></script>
   <script>
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
 
     const data = {
-      // Main nodes
       "hope-persistence": {
         title: "Hope as Persistence",
         content: "Hope that endures through time, maintaining continuity and commitment despite challenges. It is the long-form engagement with possibility, rooted in the capacity to continue moving forward."
@@ -108,8 +114,6 @@
         title: "Hope as Paradox",
         content: "Hope that contains within itself contradictions, dangers, and fragility. It is simultaneously sustaining and poisonous, certain and uncertain, real and illusory."
       },
-
-      // Sub-nodes for Hope as Persistence
       "resilience": {
         title: "Resilience",
         content: "The capacity to bounce back and continue despite adversity. It is the foundation of persistent hope."
@@ -154,8 +158,6 @@
         title: "Force",
         content: "Hope as an active power that moves people and societies."
       },
-
-      // Sub-nodes for Hope as Collective Emotion
       "collective-emotion": {
         title: "Collective Emotion",
         content: "Feelings shared and amplified across groups, creating a common affective landscape."
@@ -164,7 +166,6 @@
         title: "Care",
         content: "Attentiveness and responsibility to others, fundamental to collective hope."
       },
-
       "collective-care-solidarity": {
         title: "Collective Care and Solidarity",
         content: "The shared practices of caring for one another and standing together, weaving individual acts of compassion into collective structures of mutual support and resistance."
@@ -173,7 +174,6 @@
         title: "Embodiment",
         content: "Hope as lived and felt in the body—through gesture, presence, and physical experience. It grounds abstract possibility in the concrete reality of embodied existence."
       },
-
       "compassion": {
         title: "Compassion",
         content: "The capacity to understand and share in the suffering and hopes of others."
@@ -182,8 +182,6 @@
         title: "Intimacy",
         content: "Close connection and vulnerability between people that deepens collective hope."
       },
-
-      // Sub-nodes for Hope as Agency
       "action": {
         title: "Action",
         content: "Deliberate intervention in the world to bring about desired outcomes."
@@ -220,8 +218,6 @@
         title: "Alternative",
         content: "Different ways of being, organizing, and imagining futures."
       },
-
-      // Sub-nodes for Hope as Possibility
       "speculation": {
         title: "Speculation",
         content: "Imaginative exploration of what might be, without guarantee of realization."
@@ -246,8 +242,6 @@
         title: "Curiosity",
         content: "Openness to discovery and wonder, driving exploration of possibilities."
       },
-
-      // Sub-nodes for Hope as Paradox
       "poison": {
         title: "Poison",
         content: "Hope that can be harmful when it enables denial, complacency, or dangerous risk-taking."
@@ -282,13 +276,6 @@
       }
     };
 
-<script src="data.js"></script>
-<script>
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get("id");
-
-    const data = { ... }; // your existing data object stays here
-
     const node = data[id];
 
     if (node) {
@@ -304,25 +291,24 @@
     worksSection.innerHTML = "<h2>Works</h2>";
 
     const linkedWorks = Object.entries(artistModes).filter(([, modes]) =>
-        modes.includes(id)
+      modes.includes(id)
     );
 
     if (linkedWorks.length > 0) {
-        linkedWorks.forEach(([workId]) => {
-            const meta = workMeta[workId];
-            if (!meta) return;
-            const a = document.createElement("a");
-            a.href = meta.file;
-            a.className = "work-link";
-            a.innerHTML = `${meta.title}<span>${meta.artist}</span>`;
-            worksSection.appendChild(a);
-        });
+      linkedWorks.forEach(([workId]) => {
+        const meta = workMeta[workId];
+        if (!meta) return;
+        const a = document.createElement("a");
+        a.href = meta.file;
+        a.className = "work-link";
+        a.innerHTML = `${meta.title}<span>${meta.artist}</span>`;
+        worksSection.appendChild(a);
+      });
     } else {
-        worksSection.innerHTML += "<p style='color:#999; font-size:0.9rem'>No works linked yet.</p>";
+      worksSection.innerHTML += "<p style='color:#999; font-size:0.9rem'>No works linked yet.</p>";
     }
 
     document.querySelector(".container").appendChild(worksSection);
-</script>
-
+  </script>
 </body>
 </html>
