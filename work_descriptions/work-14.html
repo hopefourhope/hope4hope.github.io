@@ -197,7 +197,22 @@
             border-top: 1px solid #e8e8e8;
         }
 
-        .image-section img {
+        .pyramid-top {
+            margin-bottom: 0.5rem;
+        }
+
+        .pyramid-top img {
+            width: 100%;
+            display: block;
+        }
+
+        .pyramid-bottom {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+        }
+
+        .pyramid-bottom img {
             width: 100%;
             display: block;
         }
@@ -287,9 +302,13 @@
         </div>
 
         <div class="image-section">
-            <img src="../images/charlie.png" alt="Charlie Spies – SHELLS">
-            <img src="../images/charlie2.jpg" alt="Charlie Spies – SHELLS">
-            <img src="../images/Sluggi_Inlove.jpg" alt="Charlie Spies – SHELLS">
+            <div class="pyramid-top">
+                <img src="../images/charlie.png" alt="Charlie Spies – SHELLS">
+            </div>
+            <div class="pyramid-bottom">
+                <img src="../images/charlie2.jpg" alt="Charlie Spies – SHELLS">
+                <img src="../images/Sluggi_Inlove.jpg" alt="Charlie Spies – SHELLS">
+            </div>
         </div>
 
     </div>
