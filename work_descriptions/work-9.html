@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work Title – Hope4Hope</title>
-
+    <title>Hope4Hope – [Work Title]</title>
     <style>
+        @font-face {
+            font-family: 'aeonikmono-regular';
+            src: url('../fonts/AeonikMono-Regular.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,9 +19,11 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            font-family: 'aeonikmono-regular', monospace;
             background-color: #ffffff;
             color: #4a4a4a;
+            line-height: 1.7;
+            font-size: 16px;
         }
 
         .nav-links {
@@ -32,139 +40,253 @@
             color: #4a4a4a;
             text-decoration: none;
             font-weight: 500;
+            transition: color 0.2s ease;
             border-bottom: 2px solid transparent;
             padding-bottom: 2px;
         }
 
-        .nav-links a:hover,
+        .nav-links a:hover {
+            color: #fcc602;
+            border-bottom-color: #fcc602;
+        }
+
         .nav-links a.active {
-            color: #2c2c2c;
-            border-bottom-color: #2c2c2c;
+            color: #fcc602;
+            border-bottom-color: #fcc602;
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 6rem 2rem 3rem;
+            padding: 3rem 2rem 4rem 2rem;
         }
 
         .back-link {
             display: inline-block;
-            margin-bottom: 2rem;
             font-size: 0.9rem;
+            color: #666;
             text-decoration: none;
-            color: #777;
+            margin-bottom: 2rem;
+            transition: color 0.2s ease;
         }
 
         .back-link:hover {
-            color: #2c2c2c;
+            color: #fcc602;
         }
 
         h1 {
             font-size: 2rem;
-            color: #2c2c2c;
-            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: #fcc602;
+            margin-bottom: 0.25rem;
+            line-height: 1.2;
         }
 
-        .artist {
-            font-size: 0.95rem;
+        .artist-name {
+            font-size: 1rem;
             color: #999;
+            font-style: italic;
+            margin-bottom: 0.25rem;
+        }
+
+        .work-type {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #bbb;
             margin-bottom: 2rem;
         }
 
         .description {
             font-size: 1rem;
-            line-height: 1.7;
+            line-height: 1.85;
+            color: #4a4a4a;
+            text-align: justify;
+            border-top: 1px solid #e8e8e8;
+            padding-top: 2rem;
             margin-bottom: 2rem;
         }
 
-        .media {
-            margin-top: 2rem;
+        .description p {
+            margin-bottom: 1.2rem;
         }
 
-        .media img {
-            width: 100%;
-            height: auto;
+        .description p:last-child {
+            margin-bottom: 0;
+        }
+
+        .linked-modes {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e8e8e8;
+        }
+
+        .linked-modes h2 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #999;
+            margin-bottom: 1.2rem;
+            font-weight: 500;
+        }
+
+        .mode-link {
+            display: inline-block;
+            margin-right: 0.75rem;
+            margin-bottom: 0.75rem;
+            text-decoration: none;
+            color: #4a4a4a;
+            font-size: 0.9rem;
             border: 1px solid #e8e8e8;
+            padding: 0.3rem 0.75rem;
+            transition: all 0.2s ease;
+        }
+
+        .mode-link:hover {
+            color: #fcc602;
+            border-color: #fcc602;
+        }
+
+        /* 4x4 Image Grid */
+        .image-grid-section {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e8e8e8;
+        }
+
+        .image-grid-section h2 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #999;
+            margin-bottom: 1.2rem;
+            font-weight: 500;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+        }
+
+        .image-grid-item {
+            aspect-ratio: 1 / 1;
+            background-color: #f4f4f4;
+            overflow: hidden;
+        }
+
+        .image-grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-grid-item img:hover {
+            opacity: 0.85;
+        }
+
+        .image-grid-item.empty {
+            border: 1px dashed #ddd;
+        }
+
+        .image-section {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e8e8e8;
+        }
+
+        .image-section img {
+            width: 100%;
+            display: block;
         }
 
         @media (max-width: 768px) {
+            .nav-links {
+                top: 1.5rem;
+                right: 1.5rem;
+                gap: 1rem;
+            }
+
+            .nav-links a {
+                font-size: 0.85rem;
+            }
+
             .container {
-                padding: 5rem 1.5rem 2rem;
+                padding: 2rem 1.5rem 3rem 1.5rem;
             }
 
             h1 {
                 font-size: 1.5rem;
             }
+
+            .image-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
+        @media (max-width: 480px) {
+            .nav-links {
+                top: 1rem;
+                right: 1rem;
+                gap: 0.5rem;
+            }
 
-        .modes-section {
-            margin-top: 2.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #e8e8e8;
-        }
+            .nav-links a {
+                font-size: 0.75rem;
+            }
 
-        .modes-section h2 {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: #999;
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
+            .container {
+                padding: 1.5rem 1rem 2rem 1rem;
+            }
 
-        .mode-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
+            h1 {
+                font-size: 1.25rem;
+            }
 
-        .mode-tag {
-            display: inline-block;
-            padding: 0.3rem 0.75rem;
-            border: 1px solid #d0d0d0;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            color: #4a4a4a;
-            text-decoration: none;
-            transition: all 0.2s ease;
+            .image-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
-
-        .mode-tag:hover {
-            border-color: #2c2c2c;
-            color: #2c2c2c;
-        }
-        
     </style>
 </head>
 <body>
 
     <div class="nav-links">
         <a href="../index.html">Network</a>
-        <a href="../works.html" class="active">Works</a>
         <a href="../about.html">About</a>
+        <a href="../works.html" class="active">Work Descriptions</a>
     </div>
 
     <div class="container">
-        <a href="../works.html" class="back-link">← Back to Works</a>
+
+        <a class="back-link" href="../works.html">← Back to Works</a>
 
         <h1>Tentative d’épuisement</h1>
-        <div class="artist"> Marlene Lethmayer
-</div>
+        <p class="artist-name">by Marlene Lethmayer</p>
+        <!-- <p class="work-type">Robotic Textile and Wood Installation</p> -->
 
         <div class="description">
             <p>
                 In a time of constant crisis, our phone screens are both a refuge and a relentless window into catastrophe. Against this backdrop, the installation shifts its focus from the extraordinary to the infra-ordinary: Water circulates in an empty pool, cars trace quiet loops, laundry turns endlessly inside a machine. Subtle rhythms of daily life that would go unnoticed were they not captured by live-stream cameras. Nothing happens and yet something continues.
+            </p>
+            <p>
                 The work seeks to explore the quiet perseverance of a world that simply insists on existing, suggesting persistence as a possible expression of hope.
-
             </p>
         </div>
 
-        <div class="media">
-            <!-- Replace with actual media -->
-            <img src="../assets/work-1.jpg" alt="Work image">
+        <div class="linked-modes">
+            <h2>Modes of Hope</h2>
+            <a class="mode-link" href="../content/contradiction.html">Hope as Absence of Contradiction</a>
+            <a class="mode-link" href="../content/persistence.html">Hope as Persistence</a>
+            <a class="mode-link" href="../content/uncertainty.html">Hope as Uncertainty</a>
         </div>
+
+        <!-- <div class="image-section">
+            <img src="../images/Bildschirmfoto 2026-04-08 um 16.00.29.png" alt="Facing It – Marshall Paul">
+        </div> -->
+
     </div>
 
 </body>
