@@ -297,6 +297,8 @@
         let width = window.innerWidth;
         let height = window.innerHeight;
 
+        svg.attr("width", width).attr("height", height);
+
         const link = svg.append("g")
             .attr("class", "links")
             .selectAll("line")
@@ -317,13 +319,7 @@
 
         nodeGroup.append("circle")
             .attr("class", "node-circle")
-            .attr("r", d => {
-                if (d.type === "work") return 38;
-                else {
-                    // Size modes by degree: 10-28px
-                    return 10 + ((d.degree || 1) / maxDegree) * 18;
-                }
-            })
+            .attr("r", 30)
             .attr("fill", d => d.color)
             .attr("stroke", d => d.type === "work" ? "#fcca14" : "none")
             .attr("stroke-width", d => d.type === "work" ? 2 : 0);
@@ -343,10 +339,7 @@
             .force("link", d3.forceLink(links).id(d => d.id).distance(100).strength(0.6))
             .force("charge", d3.forceManyBody().strength(-300))
             .force("center", d3.forceCenter(width / 2, height / 2))
-            .force("collide", d3.forceCollide().radius(d => {
-                if (d.type === "work") return 42;
-                else return 12 + ((d.degree || 1) / maxDegree) * 18;
-            }).iterations(2))
+            .force("collide", d3.forceCollide().radius(32).iterations(2))
             .force("x", d3.forceX(d => d.type === "work" ? width * 0.2 : width * 0.8).strength(0.05))
             .force("y", d3.forceY(height / 2).strength(0.02));
 
@@ -384,7 +377,7 @@
 
             d3.select(this).select("circle")
                 .transition().duration(200)
-                .attr("r", d.type === "work" ? 42 : (12 + ((d.degree || 1) / maxDegree) * 20));
+                .attr("r", 36);
         })
         .on("mouseleave", function(event, d) {
             document.getElementById("tooltip").style.display = "none";
@@ -392,7 +385,7 @@
             link.style("opacity", 0.6);
             d3.select(this).select("circle")
                 .transition().duration(200)
-                .attr("r", d.type === "work" ? 38 : (10 + ((d.degree || 1) / maxDegree) * 18));
+                .attr("r", 30);
         })
         .on("mousemove", function(event) {
             const tooltip = document.getElementById("tooltip");
@@ -410,11 +403,11 @@
 
         simulation.on("tick", () => {
             const padding = 50;
+            const nodeRadius = 30;
 
             nodes.forEach(d => {
-                const r = d.type === "work" ? 40 : (12 + ((d.degree || 1) / maxDegree) * 18);
-                d.x = Math.max(padding + r, Math.min(width - padding - r, d.x));
-                d.y = Math.max(padding + r, Math.min(height - padding - r, d.y));
+                d.x = Math.max(padding + nodeRadius, Math.min(width - padding - nodeRadius, d.x));
+                d.y = Math.max(padding + nodeRadius, Math.min(height - padding - nodeRadius, d.y));
             });
 
             link
@@ -436,9 +429,9 @@
 
             function dragged(event, d) {
                 const padding = 50;
-                const r = d.type === "work" ? 40 : (12 + ((d.degree || 1) / maxDegree) * 18);
-                d.fx = Math.max(padding + r, Math.min(width - padding - r, event.x));
-                d.fy = Math.max(padding + r, Math.min(height - padding - r, event.y));
+                const nodeRadius = 30;
+                d.fx = Math.max(padding + nodeRadius, Math.min(width - padding - nodeRadius, event.x));
+                d.fy = Math.max(padding + nodeRadius, Math.min(height - padding - nodeRadius, event.y));
             }
 
             function dragended(event, d) {
