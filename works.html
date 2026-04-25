@@ -11,10 +11,17 @@
             box-sizing: border-box;
         }
 
+        @font-face {
+            font-family: 'aeonikmono-regular';
+            src: url('fonts/AeonikMono-Regular.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
-            background-color: #ffffff;
-            color: #4a4a4a;
+            font-family: 'aeonikmono-regular', monospace;
+            background-color: #ffed00;
+            color: #1a1a1a;
         }
 
         .nav-links {
@@ -28,41 +35,40 @@
 
         .nav-links a {
             font-size: 0.95rem;
-            color: #4a4a4a;
+            color: #1a1a1a;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.2s ease;
+            transition: opacity 0.2s ease;
             border-bottom: 2px solid transparent;
             padding-bottom: 2px;
         }
 
         .nav-links a:hover {
-            color: #fcc602;
-            border-bottom-color: #fcc602;
+            opacity: 0.5;
+            border-bottom-color: #1a1a1a;
         }
 
         .nav-links a.active {
-            color: #fcc602;
-            border-bottom-color: #fcc602;
+            border-bottom-color: #1a1a1a;
         }
 
         .header {
             padding: 3rem 2rem 2rem;
             text-align: center;
-            border-bottom: 1px solid #e8e8e8;
+            border-bottom: 1px solid #1a1a1a;
             margin-bottom: 3rem;
         }
 
         .header h1 {
             font-size: 2rem;
             font-weight: 700;
-            color: #fcc602;
+            color: #1a1a1a;
             margin-bottom: 0.5rem;
         }
 
         .header p {
             font-size: 0.95rem;
-            color: #7a7a7a;
+            color: #1a1a1a;
         }
 
         .container {
@@ -79,8 +85,8 @@
         }
 
         .work-card {
-            background: #ffffff;
-            border: 1px solid #e8e8e8;
+            background: rgba(255, 255, 255, 0.3);
+            border: 2px solid #1a1a1a;
             border-radius: 2px;
             padding: 1.5rem;
             cursor: pointer;
@@ -92,22 +98,23 @@
         }
 
         .work-card:hover {
-            border-color: #fcc602;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-color: #1a1a1a;
+            box-shadow: 0 4px 12px rgba(26, 26, 26, 0.15);
             transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.5);
         }
 
         .work-card h3 {
             font-size: 1.1rem;
             font-weight: 600;
-            color: #fcc602;
+            color: #1a1a1a;
             margin-bottom: 0.5rem;
             line-height: 1.4;
         }
 
         .work-card p {
             font-size: 0.9rem;
-            color: #666;
+            color: #1a1a1a;
             line-height: 1.6;
             flex-grow: 1;
             margin-bottom: 1rem;
@@ -115,7 +122,7 @@
 
         .work-card .artist {
             font-size: 0.85rem;
-            color: #999;
+            color: #1a1a1a;
             font-style: italic;
         }
 

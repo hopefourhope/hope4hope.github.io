@@ -20,8 +20,8 @@
 
         body {
             font-family: 'aeonikmono-regular', monospace;
-            background-color: #ffffff;
-            color: #4a4a4a;
+            background-color: #ffed00;
+            color: #1a1a1a;
             line-height: 1.7;
             font-size: 16px;
         }
@@ -37,22 +37,22 @@
 
         .nav-links a {
             font-size: 0.95rem;
-            color: #4a4a4a;
+            color: #1a1a1a;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.2s ease;
+            transition: opacity 0.2s ease;
             border-bottom: 2px solid transparent;
             padding-bottom: 2px;
         }
 
         .nav-links a:hover {
-            color: #fcc602;
-            border-bottom-color: #fcc602;
+            opacity: 0.5;
+            border-bottom-color: #1a1a1a;
         }
 
         .nav-links a.active {
-            color: #fcc602;
-            border-bottom-color: #fcc602;
+            opacity: 0.7;
+            border-bottom-color: #1a1a1a;
         }
 
         .container {
@@ -64,27 +64,27 @@
         .back-link {
             display: inline-block;
             font-size: 0.9rem;
-            color: #666;
+            color: #1a1a1a;
             text-decoration: none;
             margin-bottom: 2rem;
-            transition: color 0.2s ease;
+            transition: opacity 0.2s ease;
         }
 
         .back-link:hover {
-            color: #fcc602;
+            opacity: 0.5;
         }
 
         h1 {
             font-size: 2rem;
             font-weight: 700;
-            color: #fcc602;
+            color: #1a1a1a;
             margin-bottom: 0.25rem;
             line-height: 1.2;
         }
 
         .artist-name {
             font-size: 1rem;
-            color: #999;
+            color: #555555;
             font-style: italic;
             margin-bottom: 0.25rem;
         }
@@ -93,16 +93,16 @@
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            color: #bbb;
+            color: #555555;
             margin-bottom: 2rem;
         }
 
         .description {
             font-size: 1rem;
             line-height: 1.85;
-            color: #4a4a4a;
+            color: #1a1a1a;
             text-align: justify;
-            border-top: 1px solid #e8e8e8;
+            border-top: 1px solid #1a1a1a;
             padding-top: 2rem;
             margin-bottom: 2rem;
         }
@@ -118,14 +118,14 @@
         .linked-modes {
             margin-top: 3rem;
             padding-top: 2rem;
-            border-top: 1px solid #e8e8e8;
+            border-top: 1px solid #1a1a1a;
         }
 
         .linked-modes h2 {
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            color: #999;
+            color: #555555;
             margin-bottom: 1.2rem;
             font-weight: 500;
         }
@@ -135,30 +135,30 @@
             margin-right: 0.75rem;
             margin-bottom: 0.75rem;
             text-decoration: none;
-            color: #4a4a4a;
+            color: #1a1a1a;
             font-size: 0.9rem;
-            border: 1px solid #e8e8e8;
+            border: 1px solid #1a1a1a;
             padding: 0.3rem 0.75rem;
             transition: all 0.2s ease;
         }
 
         .mode-link:hover {
-            color: #fcc602;
-            border-color: #fcc602;
+            opacity: 0.5;
+            border-color: #1a1a1a;
         }
 
         /* 4x4 Image Grid */
         .image-grid-section {
             margin-top: 4rem;
             padding-top: 2rem;
-            border-top: 1px solid #e8e8e8;
+            border-top: 1px solid #1a1a1a;
         }
 
         .image-grid-section h2 {
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            color: #999;
+            color: #555555;
             margin-bottom: 1.2rem;
             font-weight: 500;
         }
@@ -171,7 +171,7 @@
 
         .image-grid-item {
             aspect-ratio: 1 / 1;
-            background-color: #f4f4f4;
+            background-color: rgba(255, 255, 255, 0.2);
             overflow: hidden;
         }
 
@@ -188,13 +188,13 @@
         }
 
         .image-grid-item.empty {
-            border: 1px dashed #ddd;
+            border: 1px dashed #1a1a1a;
         }
 
         .image-section {
             margin-top: 4rem;
             padding-top: 2rem;
-            border-top: 1px solid #e8e8e8;
+            border-top: 1px solid #1a1a1a;
         }
 
         .pyramid-top {
