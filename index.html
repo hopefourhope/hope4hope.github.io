@@ -433,18 +433,11 @@
                 const targetId = typeof l.target === "string" ? l.target : l.target.id;
                 return (sourceId === d.id || targetId === d.id) ? 0.5 : 0.05;
             });
-
-            d3.select(this).select("circle")
-                .transition().duration(200)
-                .attr("r", 36);
         })
         .on("mouseleave", function() {
             document.getElementById("tooltip").style.display = "none";
             nodeGroup.style("opacity", 1);
             link.style("opacity", 0.2);
-            d3.select(this).select("circle")
-                .transition().duration(200)
-                .attr("r", 30);
         })
         .on("mousemove", function(event) {
             const tooltip = document.getElementById("tooltip");
