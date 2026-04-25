@@ -367,12 +367,33 @@
         nodeGroup.append("text")
             .attr("class", "node-label")
             .attr("text-anchor", "middle")
-            .attr("dy", "0.3em")
             .attr("pointer-events", "none")
             .style("font-size", "9px")
             .style("font-weight", "500")
             .style("fill", d => d.textColor)
-            .text(d => d.label);
+            .each(function(d) {
+                const words = d.label.split(" ");
+                const lineHeight = 11;
+                const lines = [];
+                let current = "";
+                words.forEach(word => {
+                    const test = current ? current + " " + word : word;
+                    if (test.length > 10 && current) {
+                        lines.push(current);
+                        current = word;
+                    } else {
+                        current = test;
+                    }
+                });
+                if (current) lines.push(current);
+                const startY = -((lines.length - 1) * lineHeight) / 2;
+                lines.forEach((line, i) => {
+                    d3.select(this).append("tspan")
+                        .attr("x", 0)
+                        .attr("dy", i === 0 ? startY + "px" : lineHeight + "px")
+                        .text(line);
+                });
+            });
 
         const simulation = d3.forceSimulation(nodes)
             .force("link", d3.forceLink(links).id(d => d.id).distance(100).strength(0.6))
