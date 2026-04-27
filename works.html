@@ -52,6 +52,15 @@
             border-bottom-color: #1a1a1a;
         }
 
+        .nav-links {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .nav-links.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
         .header {
             padding: 3rem 2rem 2rem;
             text-align: center;
@@ -320,5 +329,6 @@
             grid.appendChild(card);
         });
     </script>
+    <script src="hide-on-scroll.js"></script>
 </body>
 </html>

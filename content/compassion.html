@@ -14,10 +14,16 @@
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'aeonikmono-regular', monospace; background-color: #ffed00; color: #1a1a1a; line-height: 1.7; font-size: 16px; }
-        .nav-links { position: fixed; top: 2rem; right: 2rem; z-index: 101; display: flex; gap: 2rem; }
+        .nav-links { position: fixed; top: 2rem; right: 2rem; z-index: 101; display: flex; gap: 2rem; 
+            transition: opacity 0.3s ease, visibility 0.3s ease;}
         .nav-links a { font-size: 0.95rem; color: #1a1a1a; text-decoration: none; font-weight: 500; transition: opacity 0.2s ease; border-bottom: 2px solid transparent; padding-bottom: 2px; }
         .nav-links a:hover { opacity: 0.5; border-bottom-color: #1a1a1a; }
         .nav-links a.active { opacity: 0.7; border-bottom-color: #1a1a1a; }
+
+        .nav-links.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
         .container { max-width: 800px; margin: 0 auto; padding: 3rem 2rem 4rem 2rem; }
         .back-link { display: inline-block; font-size: 0.9rem; color: #1a1a1a; text-decoration: none; margin-bottom: 2rem; transition: opacity 0.2s ease; }
         .back-link:hover { opacity: 0.5; }
@@ -38,8 +44,10 @@
         .image-grid-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.3s ease; }
         .image-grid-item img:hover { opacity: 0.85; }
         .image-grid-item.empty { border: 1px dashed #1a1a1a; }
-        @media (max-width: 768px) { .nav-links { top: 1.5rem; right: 1.5rem; gap: 1rem; } .nav-links a { font-size: 0.85rem; } .container { padding: 2rem 1.5rem 3rem 1.5rem; } h1 { font-size: 1.5rem; } .image-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 480px) { .nav-links { top: 1rem; right: 1rem; gap: 0.5rem; } .nav-links a { font-size: 0.75rem; } .container { padding: 1.5rem 1rem 2rem 1rem; } h1 { font-size: 1.25rem; } .image-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .nav-links { top: 1.5rem; right: 1.5rem; gap: 1rem; 
+            transition: opacity 0.3s ease, visibility 0.3s ease;} .nav-links a { font-size: 0.85rem; } .container { padding: 2rem 1.5rem 3rem 1.5rem; } h1 { font-size: 1.5rem; } .image-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 480px) { .nav-links { top: 1rem; right: 1rem; gap: 0.5rem; 
+            transition: opacity 0.3s ease, visibility 0.3s ease;} .nav-links a { font-size: 0.75rem; } .container { padding: 1.5rem 1rem 2rem 1rem; } h1 { font-size: 1.25rem; } .image-grid { grid-template-columns: repeat(2, 1fr); } }
     </style>
 </head>
 <body>
@@ -65,5 +73,6 @@
             </a>
         </div>
     </div>
+    <script src="../hide-on-scroll.js"></script>
 </body>
 </html>

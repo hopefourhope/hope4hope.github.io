@@ -57,6 +57,12 @@
             z-index: 101;
             display: flex;
             gap: 2rem;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .nav-links.hidden {
+            opacity: 0;
+            visibility: hidden;
         }
 
         .nav-links a {
@@ -647,5 +653,6 @@
         window.addEventListener("resize", updateDimensions);
         updateDimensions();
     </script>
+    <script src="hide-on-scroll.js"></script>
 </body>
 </html>

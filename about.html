@@ -83,6 +83,15 @@
             border-bottom-color: #1a1a1a;
         }
 
+        .nav-links.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .nav-links {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
         .container {
             max-width: 900px;
             margin: 0 auto;
@@ -320,5 +329,6 @@
             </section>
         </main>
     </div>
+    <script src="hide-on-scroll.js"></script>
 </body>
 </html>
