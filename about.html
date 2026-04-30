@@ -220,6 +220,29 @@
             color: #1a1a1a;
         }
 
+        .performances-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.2rem 0;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+            margin-bottom: 0;
+            text-decoration: none;
+            color: #1a1a1a;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: opacity 0.2s ease;
+        }
+
+        .performances-link:hover {
+            opacity: 0.5;
+        }
+
+        .performances-link .arrow {
+            font-size: 1.1rem;
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
@@ -352,6 +375,11 @@
         </header>
         
         <main>
+            <a href="performances.html" class="performances-link">
+                <span>Performances</span>
+                <span class="arrow">→</span>
+            </a>
+
             <section class="description">
                 <div class="description-text">
                     <p>As global crises multiply and exhaustion becomes chronic, the very notion of hope feels suspiciously kitschy, yet dangerously all the more desirable. While despair tempts us with a certain clarity, the challenge of our time lies in rediscovering the potential of hope as a driving force for change.</p>

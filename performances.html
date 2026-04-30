@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hope4Hope – Performances</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23ffed00'/></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: 'aeonikmono-regular';
+            src: url('fonts/AeonikMono-Regular.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'aeonikmono-regular', monospace;
+            background-color: #ffed00;
+            color: #1a1a1a;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .nav-links {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 101;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s ease;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 2px;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.5;
+            border-bottom-color: #1a1a1a;
+        }
+
+        .nav-links.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .nav-links {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            padding: 3rem 2rem 2rem;
+            border-bottom: 1px solid #1a1a1a;
+            margin-bottom: 2rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: #1a1a1a;
+            text-decoration: none;
+            margin-bottom: 1.5rem;
+            opacity: 0.6;
+            transition: opacity 0.2s ease;
+        }
+
+        .back-link:hover {
+            opacity: 1;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        .schedule {
+            padding: 2rem 0;
+        }
+
+        .schedule-day {
+            border-top: 1px solid #1a1a1a;
+            padding: 1.5rem 0;
+        }
+
+        .schedule-day:last-child {
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .day-header {
+            display: flex;
+            align-items: baseline;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .day-date {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            min-width: 120px;
+        }
+
+        .performance-entry {
+            display: flex;
+            gap: 1.5rem;
+            padding: 0.6rem 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .performance-time {
+            min-width: 120px;
+            flex-shrink: 0;
+            opacity: 0.7;
+        }
+
+        .performance-details {
+            flex: 1;
+        }
+
+        .performance-details strong {
+            display: block;
+            font-weight: 600;
+        }
+
+        .performance-details span {
+            font-size: 0.875rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                top: 1.5rem;
+                right: 1.5rem;
+                gap: 1rem;
+            }
+
+            .nav-links a {
+                font-size: 0.85rem;
+            }
+
+            .container {
+                padding: 1.5rem;
+            }
+
+            header {
+                padding: 2rem 1.5rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            main {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                top: 1rem;
+                right: 1rem;
+                gap: 0.5rem;
+            }
+
+            .nav-links a {
+                font-size: 0.75rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            header {
+                padding: 3rem 1rem 1rem;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            .performance-entry {
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+
+            .performance-time {
+                min-width: unset;
+            }
+        }
+
+        @media print {
+            body {
+                background-color: #ffed00;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-links">
+        <a href="index.html">Network Graph</a>
+        <a href="about.html">About</a>
+        <a href="works.html">Works Descriptions</a>
+    </div>
+
+    <div class="container">
+        <header>
+            <a href="about.html" class="back-link">← About</a>
+            <h1>Performances</h1>
+        </header>
+
+        <main>
+            <section class="schedule">
+
+                <div class="schedule-day">
+                    <div class="day-header">
+                        <span class="day-date">Fri, 01.05.</span>
+                    </div>
+                    <div class="performance-entry">
+                        <span class="performance-time">16:00 – 18:30</span>
+                        <div class="performance-details">
+                            <strong>Performance Title</strong>
+                            <span>Artist Name</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-day">
+                    <div class="day-header">
+                        <span class="day-date">Sat, 02.05.</span>
+                    </div>
+                    <div class="performance-entry">
+                        <span class="performance-time">15:30 – 19:00</span>
+                        <div class="performance-details">
+                            <strong>Performance Title</strong>
+                            <span>Artist Name</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-day">
+                    <div class="day-header">
+                        <span class="day-date">Sun, 03.05.</span>
+                    </div>
+                    <div class="performance-entry">
+                        <span class="performance-time">16:30 – 21:30</span>
+                        <div class="performance-details">
+                            <strong>Performance Title</strong>
+                            <span>Artist Name</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-day">
+                    <div class="day-header">
+                        <span class="day-date">Fri, 08.05.</span>
+                    </div>
+                    <div class="performance-entry">
+                        <span class="performance-time">16:00 – 19:30</span>
+                        <div class="performance-details">
+                            <strong>Performance Title</strong>
+                            <span>Artist Name</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-day">
+                    <div class="day-header">
+                        <span class="day-date">Sat, 09.05.</span>
+                    </div>
+                    <div class="performance-entry">
+                        <span class="performance-time">15:30 – 19:00</span>
+                        <div class="performance-details">
+                            <strong>Performance Title</strong>
+                            <span>Artist Name</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-day">
+                    <div class="day-header">
+                        <span class="day-date">Sun, 10.05.</span>
+                    </div>
+                    <div class="performance-entry">
+                        <span class="performance-time">17:00 – 22:00</span>
+                        <div class="performance-details">
+                            <strong>Performance Title</strong>
+                            <span>Artist Name</span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+    <script src="hide-on-scroll.js"></script>
+</body>
+</html>
